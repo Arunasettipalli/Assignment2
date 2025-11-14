@@ -1,11 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aru — Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styling -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>This is my portpolio</h1>
+  <header class="site-header">
+    <nav class="nav container">
+      <div class="brand">Aru<span class="dot">.</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container" id="home">
+      <div class="hero-left">
+        <h1>Hi, I’m <span class="accent">Aru</span>.</h1>
+        <p class="lead">I build clean, user-friendly web experiences — front-end & simple full-stack projects.</p>
+        <div class="cta-group">
+          <a class="btn primary" href="#work">See my work</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="card">
+          <h3>Quick facts</h3>
+          <ul>
+            <li>Computer Science (AI) student</li>
+            <li>Java, Python, HTML/CSS</li>
+            <li>Building portfolio projects</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about container" id="about">
+      <h2>About me</h2>
+      <div class="about-grid">
+        <p>I’m a passionate learner focused on building practical software and polished front-end interfaces. I enjoy converting ideas into small, useful web apps. Currently learning backend and improving full-stack skills.</p>
+        <div class="skills">
+          <h4>Skills</h4>
+          <div class="skill-list">
+            <span>HTML</span><span>CSS</span><span>Java</span><span>Python</span><span>SQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work / Projects -->
+    <section class="work container" id="work">
+      <h2>Selected projects</h2>
+      <div class="grid-projects">
+        <article class="project">
+          <div class="proj-thumb">🎮</div>
+          <h3>Hill Climbing Game (ML)</h3>
+          <p>Controller improved using machine learning ideas — small demo with visuals and controls.</p>
+          <a class="proj-link" href="#" target="_blank">View repo →</a>
+        </article>
+
+        <article class="project">
+          <div class="proj-thumb">🌐</div>
+          <h3>Application Form UI</h3>
+          <p>Responsive, animated application form built with modern CSS and subtle micro-interactions.</p>
+          <a class="proj-link" href="#" target="_blank">Live demo →</a>
+        </article>
+
+        <article class="project">
+          <div class="proj-thumb">💡</div>
+          <h3>Portfolio Starter</h3>
+          <p>Simple starter template — minimal, accessible, and easy to adapt for future projects.</p>
+          <a class="proj-link" href="#" target="_blank">View code →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact container" id="contact">
+      <h2>Contact</h2>
+      <p>If you’d like to collaborate or request code review, ping me:</p>
+      <form class="contact-form" action="#" onsubmit="alert('Thanks — message simulated (no backend).'); return false;">
+        <div class="form-grid">
+          <label>Full name
+            <input required placeholder="Your name" />
+          </label>
+          <label>Email
+            <input type="email" required placeholder="you@example.com" />
+          </label>
+          <label class="full">Message
+            <textarea required placeholder="Write a short message"></textarea>
+          </label>
+        </div>
+        <button class="btn primary" type="submit">Send message</button>
+      </form>
+
+      <p class="small">Or view my GitHub: <a href="https://github.com/Arunasettipalli" target="_blank">github.com/Arunasettipalli</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Aru — Built with ❤️</p>
+    </div>
+  </footer>
+
+  <script>
+    // small niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const tgt = document.querySelector(a.getAttribute('href'));
+        if(tgt) tgt.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  </script>
 </body>
 </html>
